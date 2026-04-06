@@ -102,6 +102,47 @@ p { color: var(--color-text-secondary); line-height: 1.8; }
 .serif-italic { font-family: var(--font-serif); font-style: italic; }
 
 /* =============================================
+   4b. STATUS BADGES
+   ============================================= */
+.status-badge {
+  display: inline-flex;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  line-height: 1;
+  width: fit-content;
+  margin-bottom: var(--space-sm);
+  transition: all var(--transition);
+}
+
+.status-badge--delivered {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1.5px solid var(--color-border);
+}
+
+.status-badge--upcoming {
+  background: var(--color-dark);
+  color: #fff;
+  border: 1.5px solid var(--color-dark);
+}
+
+.status-badge--outline-light {
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  border: 1.5px solid rgba(255,255,255,0.3);
+}
+
+.status-badge--solid-light {
+  background: #fff;
+  color: var(--color-dark);
+  border: 1.5px solid #fff;
+}
+
+/* =============================================
    5. BUTTONS
    ============================================= */
 .btn {
