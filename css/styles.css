@@ -214,7 +214,11 @@ p { color: var(--color-text-secondary); line-height: 1.8; }
   justify-content: space-between;
   transition: background var(--transition), padding var(--transition), box-shadow var(--transition);
 }
-.navbar.scrolled,
+.navbar.scrolled {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem var(--container-pad);
+}
 .navbar--solid {
   background: var(--color-surface);
   box-shadow: var(--shadow-sm);
@@ -233,7 +237,7 @@ p { color: var(--color-text-secondary); line-height: 1.8; }
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
 }
 .navbar__link {
   font-size: 0.78rem;
@@ -255,8 +259,8 @@ p { color: var(--color-text-secondary); line-height: 1.8; }
   font-weight: 500;
   letter-spacing: 0.05em;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255,255,255,0.4);
-  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.1);
   color: #fff;
   transition: all var(--transition);
   backdrop-filter: blur(8px);
@@ -267,6 +271,7 @@ p { color: var(--color-text-secondary); line-height: 1.8; }
   background: var(--color-dark);
   color: #fff;
   border-color: var(--color-dark);
+  backdrop-filter: none;
 }
 .navbar.scrolled .navbar__cta:hover,
 .navbar--solid .navbar__cta:hover {
@@ -520,94 +525,144 @@ p { color: var(--color-text-secondary); line-height: 1.8; }
 .about__right p:last-child { margin-bottom: 0; }
 
 /* =============================================
-   12. STATS SECTION
+   12. OUR TEAM SECTION
    ============================================= */
-.stats { background: var(--color-dark); }
-.stats__grid {
+.team-section { background: var(--color-surface); }
+.team__header { text-align: center; margin-bottom: var(--space-2xl); }
+.team__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-md);
+  gap: var(--space-xl);
 }
-.stat-card {
+.team-card {
   text-align: center;
-  padding: var(--space-xl) var(--space-lg);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  transition: border-color var(--transition), background var(--transition);
+  padding: var(--space-xl) var(--space-lg);
+  transition: box-shadow var(--transition), transform var(--transition);
 }
-.stat-card:hover {
-  border-color: rgba(255,255,255,0.18);
-  background: rgba(255,255,255,0.03);
+.team-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
-.stat-card__number {
+.team-card__img {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--space-md);
+  border: 3px solid var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+.team-card__name {
   font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 5vw, 4.2rem);
-  color: #fff;
-  line-height: 1;
-  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.3rem;
 }
-.stat-card__label {
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+.team-card__role {
+  font-size: 0.78rem;
   font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 /* =============================================
-   13. SERVICES SECTION
+   13. HOMEPAGE GALLERY SECTION
    ============================================= */
-.services__header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+.home-gallery { background: var(--color-bg); }
+.home-gallery__header {
+  text-align: center;
   margin-bottom: var(--space-2xl);
 }
-.services__grid {
+.home-gallery__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
 }
+.home-gallery__item {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+.home-gallery__item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+.home-gallery__item:hover img { transform: scale(1.05); }
+.home-gallery__cta { text-align: center; }
 
 /* =============================================
-   14. TOWNSHIPS SECTION
+   13b. HOMEPAGE CAREER SECTION
    ============================================= */
-.townships__header { text-align: center; margin-bottom: var(--space-2xl); }
-.townships__grid {
+.career-section { background: var(--color-surface); }
+.career-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+.career-section__content p { margin-bottom: var(--space-md); }
+.career-section__content p:last-of-type { margin-bottom: 0; }
+.career-section__form {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+.form__success-career {
+  display: none;
+  text-align: center;
+  padding: var(--space-xl);
+}
+.form__success-career.is-visible { display: block; }
+
+/* =============================================
+   13d. GALLERY STANDALONE PAGE
+   ============================================= */
+.gallery-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+.gallery-page__item {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+.gallery-page__item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+.gallery-page__item:hover img { transform: scale(1.05); }
+
+/* =============================================
+   14. PROJECTS SECTION
+   ============================================= */
+.projects__header { text-align: center; margin-bottom: var(--space-xl); }
+.projects__intro {
+  max-width: 720px;
+  margin: 0 auto var(--space-2xl);
+  text-align: center;
+}
+.projects__intro p { margin-bottom: var(--space-md); font-size: 1rem; }
+.projects__intro p:last-child { margin-bottom: 0; }
+.projects__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-xl);
 }
-.township-card .card__image { aspect-ratio: 16/10; }
+.project-card .card__image { aspect-ratio: 16/10; }
 
-/* =============================================
-   15. VISUAL SHOWCASE
-   ============================================= */
-.showcase {
-  position: relative;
-  height: 580px;
-  overflow: hidden;
-}
-.showcase__image {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-.showcase:hover .showcase__image { transform: scale(1.03); }
-.showcase__overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, transparent 35%, rgba(0,0,0,0.65) 100%);
-  display: flex; align-items: flex-end;
-  padding: var(--space-2xl) var(--container-pad);
-}
-.showcase__text {
-  font-family: var(--font-serif);
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
-  color: #fff;
-  font-style: italic;
-  max-width: 600px;
-  line-height: 1.3;
-}
+/* showcase removed — replaced by dedicated gallery section */
 
 /* =============================================
    16. BLOG PREVIEW
@@ -848,27 +903,28 @@ p { color: var(--color-text-secondary); line-height: 1.8; }
 .enquiry__left p { margin-bottom: var(--space-xl); }
 
 /* =============================================
-   23. PAGE HEADER (Blog pages)
+   23. PAGE HEADER (Blog + other pages)
    ============================================= */
 .page-header {
-  background: var(--color-dark);
+  background: var(--color-bg);
   padding: calc(var(--space-3xl) + 4rem) var(--container-pad) var(--space-3xl);
   text-align: center;
+  border-bottom: 1px solid var(--color-border);
 }
 .page-header__label {
   display: block;
   font-size: 0.72rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: var(--color-text-muted);
   margin-bottom: var(--space-sm);
 }
 .page-header__title {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 5vw, 4rem);
-  color: #fff;
+  color: var(--color-text-primary);
   margin-bottom: var(--space-md);
 }
-.page-header__desc { color: rgba(255,255,255,0.5); max-width: 520px; margin: 0 auto; }
+.page-header__desc { color: var(--color-text-secondary); max-width: 520px; margin: 0 auto; }
 
 /* =============================================
    24. BLOG GRID (Listing Page)
@@ -959,13 +1015,15 @@ p { color: var(--color-text-secondary); line-height: 1.8; }
 @media (max-width: 1024px) {
   :root { --container-pad: 1.5rem; --space-3xl: 5rem; }
   .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
-  .stats__grid { grid-template-columns: repeat(2, 1fr); }
-  .services__grid { grid-template-columns: repeat(2, 1fr); }
+  .team__grid { grid-template-columns: repeat(2, 1fr); }
+  .home-gallery__grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-page__grid { grid-template-columns: repeat(2, 1fr); }
   .township-overview__grid { grid-template-columns: 1fr; gap: var(--space-xl); }
   .enquiry__grid { grid-template-columns: 1fr; gap: var(--space-xl); }
   .blog-grid { grid-template-columns: 1fr; }
   .gallery__grid { grid-template-columns: repeat(2, 1fr); }
   .gallery__item--wide { grid-column: span 2; }
+  .career-section__inner { grid-template-columns: 1fr; gap: var(--space-xl); }
 }
 
 @media (max-width: 768px) {
@@ -974,21 +1032,21 @@ p { color: var(--color-text-secondary); line-height: 1.8; }
   .navbar__hamburger { display: flex; }
   .about__grid { grid-template-columns: 1fr; gap: var(--space-xl); }
   .about__left { position: static; }
-  .stats__grid { grid-template-columns: repeat(2, 1fr); }
-  .services__grid { grid-template-columns: 1fr; }
-  .townships__grid { grid-template-columns: 1fr; }
+  .team__grid { grid-template-columns: repeat(2, 1fr); }
+  .projects__grid { grid-template-columns: 1fr; }
+  .home-gallery__grid { grid-template-columns: 1fr; }
+  .gallery-page__grid { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr; gap: var(--space-xl); }
   .footer__bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
   .hero__actions { flex-direction: column; }
   .blog-item { grid-template-columns: 1fr; }
   .blog-item__image { display: none; }
-  .blog-preview__header, .services__header { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+  .blog-preview__header { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
   .project-details__grid { grid-template-columns: 1fr; }
   .form__row { grid-template-columns: 1fr; }
   .gallery__grid { grid-template-columns: 1fr; }
   .gallery__item--wide { grid-column: span 1; }
   .highlights { grid-template-columns: 1fr; }
-  .showcase { height: 380px; }
   .page-hero { height: 65vh; }
   .blog-grid { grid-template-columns: 1fr; }
   .article-meta { flex-direction: column; gap: var(--space-sm); align-items: flex-start; }
@@ -996,6 +1054,6 @@ p { color: var(--color-text-secondary); line-height: 1.8; }
 
 @media (max-width: 480px) {
   :root { --container-pad: 1rem; }
-  .stats__grid { grid-template-columns: repeat(2, 1fr); }
+  .team__grid { grid-template-columns: 1fr; }
   .hero__scroll { display: none; }
 }

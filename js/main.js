@@ -55,12 +55,25 @@
   }, 80);
 })();
 
-/* --- Enquiry Form Success Handler --- */
+/* --- Enquiry Form Success Handler (Project Pages) --- */
 (function () {
   var forms = document.querySelectorAll('.enquiry-form');
   forms.forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      var required = form.querySelectorAll('[required]');
+      var allFilled = true;
+      required.forEach(function (field) {
+        if (!field.value.trim()) {
+          field.style.borderColor = '#e05252';
+          allFilled = false;
+        } else {
+          field.style.borderColor = '';
+        }
+      });
+      if (!allFilled) return;
+
       var content = form.querySelector('.form-content');
       var success = form.querySelector('.form__success');
       if (content && success) {
@@ -68,6 +81,35 @@
         success.classList.add('is-visible');
       }
     });
+  });
+})();
+
+/* --- Career Inline Form Success Handler --- */
+(function () {
+  var form = document.getElementById('career-inline-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var required = form.querySelectorAll('[required]');
+    var allFilled = true;
+    required.forEach(function (field) {
+      if (!field.value.trim()) {
+        field.style.borderColor = '#e05252';
+        allFilled = false;
+      } else {
+        field.style.borderColor = '';
+      }
+    });
+    if (!allFilled) return;
+
+    var content = form.querySelector('.form-content');
+    var success = form.querySelector('.form__success-career');
+    if (content && success) {
+      content.style.display = 'none';
+      success.classList.add('is-visible');
+    }
   });
 })();
 
@@ -88,7 +130,7 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
   elements.forEach(function (el) { observer.observe(el); });
 })();
