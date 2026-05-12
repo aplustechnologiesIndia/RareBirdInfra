@@ -35,18 +35,18 @@
 
   <main>
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== HERO (Cinematic Fullscreen) ===== -->
     <section class="hero" id="home" aria-label="Hero">
-      <div class="hero__bg"
-        style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop');">
-      </div>
+      <div class="hero__bg" style="background-image: url('./assets/images/Rarebird%20Villas/main.jpg');"></div>
       <div class="hero__overlay"></div>
       <div class="hero__content">
+        <span class="hero__label">Premium Real Estate in Lucknow</span>
         <h1 class="hero__title">Building Communities,<br><em>Shaping Futures</em></h1>
         <p class="hero__desc">We create thoughtfully planned villa and township communities where families thrive and
           quality of life is always elevated.</p>
         <div class="hero__actions">
           <a href="#projects" class="btn btn-primary--light">Explore Our Projects</a>
+          <a href="#contact" class="btn btn-outline--light">Contact Us</a>
         </div>
       </div>
       <div class="hero__scroll" aria-hidden="true">
@@ -88,34 +88,25 @@
           <span class="section-label">The People Behind the Vision</span>
           <h2>Our Team</h2>
         </div>
-        <div class="team__grid">
+        <div class="team__grid"
+          style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 1200px; margin: 0 auto;">
           <div class="team-card fade-in">
-            <img class="team-card__img"
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80&fit=crop&crop=face"
-              alt="Arjun Sharma" loading="lazy" />
-            <p class="team-card__name">Arjun Sharma</p>
+            <img class="team-card__img" src="./assets/images/team/Abhishek.jpg" alt="Abhisheik Kamal Shahi"
+              loading="lazy" style="object-position: center top;" />
+            <p class="team-card__name">Abhisheik Kamal Shahi</p>
+            <p class="team-card__role">Chairman</p>
+          </div>
+          <div class="team-card fade-in delay-1">
+            <img class="team-card__img" src="./assets/images/team/Vivek.jpg" alt="Vivek Kumar Shahi" loading="lazy"
+              style="object-position: center top;" />
+            <p class="team-card__name">Vivek Kumar Shahi</p>
             <p class="team-card__role">Managing Director</p>
           </div>
           <div class="team-card fade-in delay-1">
-            <img class="team-card__img"
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80&fit=crop&crop=face"
-              alt="Priya Verma" loading="lazy" />
-            <p class="team-card__name">Priya Verma</p>
-            <p class="team-card__role">Head of Projects</p>
-          </div>
-          <div class="team-card fade-in delay-2">
-            <img class="team-card__img"
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80&fit=crop&crop=face"
-              alt="Rahul Gupta" loading="lazy" />
-            <p class="team-card__name">Rahul Gupta</p>
-            <p class="team-card__role">Sales Director</p>
-          </div>
-          <div class="team-card fade-in delay-3">
-            <img class="team-card__img"
-              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80&fit=crop&crop=face"
-              alt="Sneha Singh" loading="lazy" />
-            <p class="team-card__name">Sneha Singh</p>
-            <p class="team-card__role">Customer Relations</p>
+            <img class="team-card__img" src="./assets/images/team/Awantika.jpeg" alt="Awantika Awasthi" loading="lazy"
+              style="object-position: center top;" />
+            <p class="team-card__name">Awantika Awasthi</p>
+            <p class="team-card__role">Chief Legal Officer</p>
           </div>
         </div>
       </div>
@@ -138,9 +129,8 @@
         </div>
         <div class="projects__grid">
           <div class="card project-card fade-in">
-            <img class="card__image"
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80&fit=crop"
-              alt="Rarebird Villas, Lucknow" loading="lazy" />
+            <img class="card__image" src="./assets/images/Rarebird Villas/main.jpg" alt="Rarebird Villas, Lucknow"
+              loading="lazy" />
             <div class="card__body">
               <span class="status-badge status-badge--delivered">Delivered</span>
               <p class="card__meta">📍 Lucknow</p>
@@ -152,9 +142,8 @@
             </div>
           </div>
           <div class="card project-card fade-in delay-2">
-            <img class="card__image"
-              src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80&fit=crop"
-              alt="Oriyana Enclave, Lucknow" loading="lazy" />
+            <img class="card__image" src="./assets/images/Oriyana Enclave/Main.jpg" alt="Oriyana Enclave, Lucknow"
+              loading="lazy" />
             <div class="card__body">
               <span class="status-badge status-badge--upcoming">Upcoming Project</span>
               <p class="card__meta">📍 Lucknow</p>
@@ -242,28 +231,24 @@
         </div>
         <div class="home-gallery__grid">
           <div class="home-gallery__item fade-in">
-            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&fit=crop"
-              alt="Luxury villa exterior" loading="lazy" />
+            <img src="./assets/images/Rarebird Villas/main.jpg" alt="Rarebird Villas Exterior" loading="lazy" />
           </div>
           <div class="home-gallery__item fade-in delay-1">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80&fit=crop"
-              alt="Premium residence" loading="lazy" />
+            <img src="./assets/images/Oriyana Enclave/Main.jpg" alt="Oriyana Enclave Premium Residence"
+              loading="lazy" />
           </div>
           <div class="home-gallery__item fade-in delay-2">
-            <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80&fit=crop"
-              alt="Modern interior" loading="lazy" />
+            <img src="./assets/images/Oriyana Enclave/ClubHouse.jpg" alt="Oriyana Enclave Clubhouse" loading="lazy" />
           </div>
           <div class="home-gallery__item fade-in delay-1">
-            <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80&fit=crop"
-              alt="Landscaped garden" loading="lazy" />
+            <img src="./assets/images/Oriyana Enclave/Park.jpg" alt="Oriyana Enclave Landscaped Park" loading="lazy" />
           </div>
           <div class="home-gallery__item fade-in delay-2">
-            <img src="https://images.unsplash.com/photo-1575517111839-3a3843ee7f5d?w=800&q=80&fit=crop"
-              alt="Clubhouse amenity" loading="lazy" />
+            <img src="./assets/images/Oriyana Enclave/SwimmingPool.jpg" alt="Oriyana Enclave Swimming Pool"
+              loading="lazy" />
           </div>
           <div class="home-gallery__item fade-in delay-3">
-            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80&fit=crop"
-              alt="Gated community" loading="lazy" />
+            <img src="./assets/images/Oriyana Enclave/Gym.jpg" alt="Oriyana Enclave Gymnasium" loading="lazy" />
           </div>
         </div>
         <div class="home-gallery__cta fade-in">
@@ -349,6 +334,11 @@
           <span class="footer__logo">Rarebird Infra</span>
           <p class="footer__tagline">Rare Bird Infra Pvt. Ltd. — Where Luxury Takes Flight. Building premium villas and
             plotted developments in Lucknow.</p>
+          <div class="footer__socials" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+            <a href="https://www.facebook.com/profile.php?id=61589651843627" target="_blank"
+              class="footer__link">Facebook</a>
+            <a href="https://www.instagram.com/rarebirdinfra01/" target="_blank" class="footer__link">Instagram</a>
+          </div>
         </div>
         <div>
           <p class="footer__col-heading">Navigation</p>
@@ -374,15 +364,15 @@
           <p class="footer__col-heading">Contact</p>
           <div class="footer__contact-item">
             <span class="footer__contact-label">Address</span>
-            <span class="footer__contact-value">Lucknow, Uttar Pradesh — 226 001</span>
+            <span class="footer__contact-value">158, Swapnlok Colony, Kamta, Lucknow</span>
           </div>
           <div class="footer__contact-item">
             <span class="footer__contact-label">Phone</span>
-            <span class="footer__contact-value">+91 98765 43210</span>
+            <span class="footer__contact-value">+91 9214331459</span>
           </div>
           <div class="footer__contact-item">
             <span class="footer__contact-label">Email</span>
-            <span class="footer__contact-value">hello@rarebirdinfra.in</span>
+            <span class="footer__contact-value">Rarebirdinfra@gmail.com</span>
           </div>
         </div>
       </div>

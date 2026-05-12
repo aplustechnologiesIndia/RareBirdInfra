@@ -1,14 +1,14 @@
 # Rarebird Infra — Website
 
-> Premium township development website. A static, design-aligned frontend built for brand presentation and client validation.
+> Premium real estate development website for Rare Bird Infra Pvt. Ltd. A static, design-aligned frontend built for brand presentation and client validation.
 
 ---
 
 ## Overview
 
-This is the official website for **Rarebird Infra**, a real estate company focused on developing and marketing integrated township projects across India.
+This is the official website for **Rarebird Infra**, a real estate company focused on developing and marketing premium villas and plotted developments across Lucknow, India.
 
-The website serves as a **brand and project showcase platform** — presenting township developments, communicating credibility, and capturing user enquiries.
+The website serves as a **brand and project showcase platform** — presenting developments like Rarebird Villas and Oriyana Enclave, communicating credibility, and capturing user enquiries.
 
 ---
 
@@ -16,9 +16,10 @@ The website serves as a **brand and project showcase platform** — presenting t
 
 | Page | File | Description |
 |---|---|---|
-| Homepage | `index.html` | Hero, About, Stats, Services, Townships, Blog preview, CTA |
-| Rarebird Greens | `township-1.html` | Township detail — Devanahalli, Bangalore |
-| Rarebird Heights | `township-2.html` | Township detail — Hosur, Tamil Nadu |
+| Homepage | `index.html` | Hero, About, Team, Projects, Blog preview, Gallery, Integrated Career Form, CTA |
+| Rarebird Villas | `project-rarebird-villas.html` | Project detail — Delivered premium villas in Lucknow |
+| Oriyana Enclave | `project-oriyana-enclave.html` | Project detail — Upcoming 20-acre gated township |
+| Gallery | `gallery.html` | Full masonry image gallery showcasing all projects |
 | Blog Listing | `blog.html` | All blog posts in card grid layout |
 | Blog Detail | `blog-detail.html` | Full article view with related posts |
 
@@ -28,27 +29,41 @@ The website serves as a **brand and project showcase platform** — presenting t
 
 ```
 RrarebirdInfra/
-├── index.html              # Homepage
-├── township-1.html         # Rarebird Greens detail page
-├── township-2.html         # Rarebird Heights detail page
-├── blog.html               # Blog listing page
-├── blog-detail.html        # Blog article detail page
+├── index.html                       # Homepage (Hero, About, Team, Projects, Blog, Gallery, Career, CTA)
+├── project-rarebird-villas.html     # Rarebird Villas project detail page
+├── project-oriyana-enclave.html     # Oriyana Enclave project detail page
+├── gallery.html                     # Full gallery page
+├── blog.html                        # Blog listing page
+├── blog-detail.html                 # Blog article detail page
 │
 ├── css/
-│   └── styles.css          # Complete design system & all component styles
+│   └── styles.css                   # Complete design system & all component styles
 │
 ├── js/
-│   └── main.js             # Navbar scroll, mobile menu, form handler, animations
+│   └── main.js                      # Navbar scroll, mobile menu, form handler, animations
 │
 ├── assets/
-│   └── images/             # Project images
+│   └── images/                      # Project images
+│       ├── Hero Section/            # Homepage hero background
+│       ├── Oriyana Enclave/         # 18 images including amenities, layouts, and main views
+│       ├── Rarebird Villas/         # Main external views
+│       └── Team/                    # Team member portraits
 │
-└── Docs/
-    ├── prd.md              # Product Requirements Document
-    ├── design.md           # Design Document
-    ├── todo.md             # Development task list
-    └── tech.md             # Technical Stack Document
+└── todo.md                          # Development task list
 ```
+
+---
+
+## Image Asset Organization & Mapping
+
+The website uses real project assets replacing previous placeholders.
+
+- **Rarebird Villas (`assets/images/Rarebird Villas/`)**:
+  - `main.jpg` is utilized across the property card on the homepage, the hero section on the project detail page, and throughout the Rarebird Villas gallery slots.
+
+- **Oriyana Enclave (`assets/images/Oriyana Enclave/`)**:
+  - `Main.jpg` serves as the primary hero image and property card thumbnail.
+  - The remaining 17 images (including `ClubHouse.jpg`, `SwimmingPool.jpg`, `Gym.jpg`, `Park.jpg`, `TennisCourt.jpg`, and various layout plans) are intelligently mapped across the homepage gallery, the full gallery page, and the Oriyana Enclave project detail page to showcase the premium amenities and infrastructure.
 
 ---
 
@@ -60,44 +75,15 @@ RrarebirdInfra/
 | Styling | Vanilla CSS3 (custom design system) |
 | Interactivity | Vanilla JavaScript (ES5 compatible) |
 | Fonts | Google Fonts — Instrument Serif + Inter |
-| Images | Unsplash (placeholder) |
 | Backend | None — fully static |
 
 No frameworks. No build tools. No dependencies.
 
 ---
 
-## Features
-
-- **Transparent navbar** that transitions to solid on scroll
-- **Mobile navigation** — full-screen overlay menu with hamburger toggle
-- **Enquiry forms** — UI-only, shows success message on submit
-- **Fade-in animations** via Intersection Observer API
-- **Responsive layout** — mobile, tablet, and desktop breakpoints
-- **Hero image animation** — subtle zoom-out on load
-- **Card hover effects** — lift + shadow on services, township, and blog cards
-
----
-
-## Design System
-
-Defined in `css/styles.css` via CSS custom properties:
-
-```css
---color-bg:           #F5F5F5   /* Page background */
---color-surface:      #FFFFFF   /* Card / section surface */
---color-text-primary: #242424   /* Headings & primary text */
---color-dark:         #1A1A1A   /* Navbar, footer, CTA backgrounds */
-
---font-serif:  'Instrument Serif', Georgia, serif   /* Headings */
---font-sans:   'Inter', system-ui, sans-serif       /* Body & UI */
-```
-
----
-
 ## Running Locally
 
-No build step required. Open any HTML file directly in a browser:
+No build step required. Open any HTML file directly in a browser or run a simple local server:
 
 ```bash
 # Option 1 — open directly
@@ -113,36 +99,18 @@ python -m http.server 8000
 
 ---
 
-## Scope
+## Features
 
-### ✅ Included in this version
-- Complete website structure and all pages
-- Placeholder content and imagery
-- Functional navigation between pages
-- Demo enquiry forms (UI only — no data sent)
-- Responsive layout
-
-### ❌ Not included (future phases)
-- Backend / API integration
-- CMS or admin panel
-- Form data storage or email delivery
-- Search or filtering
-- Authentication
-
----
-
-## Docs
-
-All planning documents are in the `/Docs` folder:
-
-- [`prd.md`](Docs/prd.md) — Product Requirements
-- [`design.md`](Docs/design.md) — Design Specification
-- [`tech.md`](Docs/tech.md) — Technical Stack
-- [`todo.md`](Docs/todo.md) — Development Task List
+- **Transparent navbar** that transitions to solid on scroll (light mode updated)
+- **Mobile navigation** — full-screen overlay menu with hamburger toggle
+- **Enquiry & Career forms** — UI-only, shows success message on submit
+- **Fade-in animations** via Intersection Observer API
+- **Responsive layout** — mobile, tablet, and desktop breakpoints
+- **Masonry gallery layouts** — clean grid structures for project showcases
 
 ---
 
 ## Author
 
 **Archit Mishra**  
-Rarebird Infra — Version 1.0 (Initial Skeleton Build)
+Rarebird Infra

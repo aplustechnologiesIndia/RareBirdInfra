@@ -16,6 +16,7 @@ $RECYCLE.BIN/
 # ── Editor & IDE ──────────────
 .vscode/
 .idea/
+.history/
 *.suo
 *.ntvs*
 *.njsproj
@@ -28,6 +29,7 @@ $RECYCLE.BIN/
 *.log
 logs/
 *.tmp
+*~
 *.temp
 *.bak
 *.orig
